@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  mindustry:
+    image: anuken/mindustry:latest
+    container_name: mindustry
+    restart: unless-stopped
+    ports:
+      - "6567:6567/tcp"
+      - "6567:6567/udp"
+    volumes:
+      - ./config:/root/.mindustry/config
+      - ./saves:/root/.mindustry/saves
+    environment:
+      - TZ=America/New_York
